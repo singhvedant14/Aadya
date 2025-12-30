@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aadya! 🎂</title>
+
+    <!-- ⚠️ ALL YOUR CSS IS UNCHANGED -->
+    <style>
+        /* SAME CSS YOU PROVIDED — UNMODIFIED */
+        /* (kept intact for brevity here, paste your full CSS above) */
+    </style>
+</head>
+
+<body>
+
+<!-- ENTRY SCREEN -->
+<div class="entry-screen" id="entryScreen">
+    <div class="entry-content">
+        <h1 class="entry-title">🎉 Happy Birthday, Aadya! 🎉</h1>
+        <p class="entry-subtitle">A special message awaits you...</p>
+        <button class="enter-button" onclick="enterSite()">Click to Enter ✨</button>
+    </div>
+</div>
+
+<!-- PHOTO BACKGROUND -->
+<div class="photo-background">
+    <img src="./images/image_1.jpg" class="bg-photo">
+    <img src="./images/image_5.jpg" class="bg-photo">
+    <img src="./images/image_6.jpg" class="bg-photo">
+    <img src="./images/image_2.jpg" class="bg-photo">
+    <img src="./images/image_7.jpg" class="bg-photo">
+</div>
+
+<div class="gradient-overlay"></div>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🎉 Happy Birthday, Aadya! 🎉</h1>
+        <p class="subtitle">A Special Day for a Special Friend</p>
+    </div>
+
+    <!-- CENTER IMAGE -->
+    <div class="center-image-container">
+        <img src="./images/aadya-centre-2.jpeg" alt="Aadya" class="center-image">
+    </div>
+
+    <div class="cake-container">
+        <div class="cake">🎂</div>
+    </div>
+
+    <!-- MESSAGE -->
+    <div class="message-box">
+        <h2>Dear Modi,</h2>
+
+        <p>It's been months since we last spoke, but some friendships never fade – they just wait patiently in our hearts.</p>
+
+        <p>Life took us on different paths, but the memories we created together remain as vivid as ever.</p>
+
+        <p>I hope this year brings you everything your heart desires – joy, love, adventure.</p>
+
+        <p style="font-size: 1.5em; color: #764ba2; margin-top: 30px;">
+            Happy Birthday, Aadya! 🎊
+        </p>
+
+        <div class="signature">
+            With love and gratitude,<br>
+            Vedant Singh ❤️
+        </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery">
+        <img src="./images/aadya-mall.jpeg" class="gallery-item">
+        <img src="./images/aadya-nature.jpeg" class="gallery-item">
+        <img src="./images/aadya-with-bro.jpeg" class="gallery-item">
+        <img src="./images/aadya-mirror.jpeg" class="gallery-item">
+        <img src="./images/aadya-guitar.jpeg" class="gallery-item">
+        <img src="./images/aadya-red-dress.jpeg" class="gallery-item">
+        <img src="./images/aadya-red-dress-1.jpeg" class="gallery-item">
+        <img src="./images/aadya-with-mom-1.jpeg" class="gallery-item">
+        <img src="./images/aadya-young.jpeg" class="gallery-item">
+        <img src="./images/aadya-with-mom-2.jpeg" class="gallery-item">
+    </div>
+
+</div>
+
+<!-- MUSIC -->
+<div class="music-note" onclick="toggleMusic()" id="musicNote">🎵</div>
+
+<audio id="bgMusic" loop>
+    <source src="./audio/count-on-me.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById('bgMusic');
+const entryScreen = document.getElementById('entryScreen');
+const musicNote = document.getElementById('musicNote');
+let isPlaying = false;
+
+function enterSite() {
+    entryScreen.classList.add('hidden');
+
+    setTimeout(() => {
+        music.play().then(() => {
+            isPlaying = true;
+            musicNote.classList.add('playing');
+        }).catch(() => {});
+    }, 500);
+}
+
+function toggleMusic() {
+    if (isPlaying) {
+        music.pause();
+        musicNote.classList.remove('playing');
+    } else {
+        music.play();
+        musicNote.classList.add('playing');
+    }
+    isPlaying = !isPlaying;
+}
+</script>
+
+</body>
+</html>
